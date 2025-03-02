@@ -3,6 +3,10 @@
 import Image from "next/image";
 import ayush from "@/public/ayush.jpg";
 import Link from "next/link";
+import { projects } from "@/data/projects";
+import ProjectCard from "@/components/ProjectCard";
+
+
 
 export default function Home() {
   return (
@@ -19,11 +23,11 @@ export default function Home() {
           />
         </div>
         <div className="gap-4 flex flex-col">
-          <h1 className="text-6xl font-bold">Hi, i&apos;m ayush👋</h1>
-          <p className="text-lg">
+          <h1 className="text-5xl font-bold">Hi, i&apos;m ayush👋</h1>
+          <p className="">
             I am a third year CS student, i love building apps and websites{" "}
           </p>
-          <p className="text-lg">
+          <p className="">
             I am very active on{" "}
             <Link
               href={"https://x.com/ayushon_twt"}
@@ -36,18 +40,15 @@ export default function Home() {
           </p>
         </div>
       </div>
-      <div>
-        <h1 className="text-3xl font-bold pt-10">Projects</h1>
-        {/* Project Card */}
-        <section>
-          <h1>HackToGSoC</h1>
-          <Image src={ayush} width={280} height={280} alt="Ayush" />
-          <p>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eligendi
-            placeat possimus maxime voluptatum, harum obcaecati omnis veritatis
-            sunt voluptates consequatur?
-          </p>
-        </section>
+      <h1 className="text-3xl font-bold pt-10 ">Projects</h1>
+      {/* Project Card */}
+      <div className="flex flex-wrap">
+        <ProjectCard project={projects[0]} />
+        <ProjectCard project={projects[1]} />
+        <ProjectCard project={projects[2]} />
+        <ProjectCard project={projects[3]} />
+        {/* Removed min-w-full  */}
+        
       </div>
     </main>
   );
