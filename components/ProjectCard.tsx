@@ -4,9 +4,15 @@ import Link from "next/link";
 import { FaGithub } from "react-icons/fa";
 import { LuLink } from "react-icons/lu";
 
-export default function ProjectCard({ project }: { project: Project }) {
+
+interface ProjectCardProps {
+    project: Project;
+    className?:string
+}
+
+export default function ProjectCard({ project, className = "" }:  ProjectCardProps  ) {
   return (
-    <section className="pt-10 pl-3 pr-3 w-80 md:w-1/2 mb-3 flex flex-col gap-1">
+    <Link href={project.liveLink || project.githubLink || "https://www.youtube.com/watch?v=dQw4w9WgXcQ"} className={`pt-10 pl-3 ${className} pr-3  mb-3 flex flex-col gap-1 transition-all hover:scale-105`}>
       <div className="flex flex-col mb-6">
         <Image
           src={project.imgPath}
@@ -24,21 +30,21 @@ export default function ProjectCard({ project }: { project: Project }) {
             </p>
           )}
           {project.status === "building" && (
-              
-          <p className="bg-yellow-200 text-yellow-800 text-xs px-1 rounded-sm flex items-center gap-1 font-bold border border-yellow-800">
-            building{" "}
-            <div className="w-2 h-2 rounded-full bg-yellow-600 animate-pulse" />
-          </p>
+            <p className="bg-yellow-200 text-yellow-800 text-xs px-1 rounded-sm flex items-center gap-1 font-bold border border-yellow-800">
+              building{" "}
+              <div className="w-2 h-2 rounded-full bg-yellow-600 animate-pulse" />
+            </p>
           )}
         </div>
-        <div className="flex gap-2">
-            {project.techs.map((tech, idx) => (
-
-          <span className="text-xs rounded-md bg-white px-1 text-black flex" key={idx}>
-            {tech}
-          </span>
-            ))}
-          
+        <div className="flex gap-2 flex-wrap">
+          {project.techs.map((tech, idx) => (
+            <span
+              className="text-xs rounded-md bg-zinc-200 px-1 text-zinc-900 border border-zinc-800 font-extrabold  flex"
+              key={idx}
+            >
+              {tech}
+            </span>
+          ))}
         </div>
         <p className="text-sm mt-2">{project.description}</p>
       </div>
@@ -55,6 +61,6 @@ export default function ProjectCard({ project }: { project: Project }) {
           </Link>
         )}
       </div>
-    </section>
+    </Link>
   );
 }

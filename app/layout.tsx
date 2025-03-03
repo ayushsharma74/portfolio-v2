@@ -3,6 +3,7 @@ import "./globals.css";
 import MaxWidthWrapper from "@/components/MaxWidthWrapper";
 import { jura } from "@/fonts/jura";
 import Navbar from "@/components/navigation/Navbar";
+import Footer from "@/components/Footer";
 
 
 export const metadata: Metadata = {
@@ -23,6 +24,7 @@ export default function RootLayout({
         <MaxWidthWrapper>
           <Navbar />
           {children}
+          <Footer />
         </MaxWidthWrapper>
       </body>
     </html>

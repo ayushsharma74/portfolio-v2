@@ -1,7 +1,13 @@
+import BlogCard from "@/components/BlogCard";
+import { blogmetadata } from "@/data/blogs";
+
+
 export default function Blogs() {
-    return (
-        <main>
-            <h1>blogs</h1>
-        </main>
-    );
+  return (
+    <main>
+      {blogmetadata.map((blog) => (
+        <BlogCard key={blog.title} blog={blog} />
+      ))}
+    </main>
+  );
 }
