@@ -9,12 +9,18 @@ import { FaGithub, FaInstagram, FaLinkedin, FaDiscord } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { SocialLinks } from "@/lib/constants";
 import { Experience, experience } from "@/data/experience";
+import * as motion from "motion/react-client"
 
 export default function Home() {
+  const transition = {
+    duration: 0.2,
+    delay: 0.4,
+    ease: [0, 0.71, 0.2, 1.01],
+  }
   return (
-    <main className="">
+    <motion.main initial={{ filter: "blur(15px)", y:20 }} animate={{ filter: "blur(0px)", opacity: 1, y:0 }} transition={transition} className="opacity-0">
       {/* About me Section */}
-      <div className="pt-10 flex gap-10 sm:flex-row flex-col">
+      <div  className="pt-10 flex gap-10 sm:flex-row flex-col">
         <div className="flex items-center justify-center">
           <Image
             src={ayush}
@@ -100,15 +106,25 @@ export default function Home() {
       <div>
         {/* Experience section */}
         {experience.map((exp: Experience) => (
-        <Link href={exp.link} key={exp.company} className="py-4 px-4 border border-zinc-800 rounded-md flex flex-col gap-2 my-4 hover:scale-105 transition-all">
-          <div className="flex gap-3 items-center">
-
-          <Image src={exp.logo} width={45} height={45} alt="EdSlash" className="rounded-full" />
-          <h2 className="font-bold underline hover:no-underline text-lg">{exp.company}</h2>
-          </div>
-          <h3>{exp.info}</h3>
-        </Link>
-          
+          <Link
+            href={exp.link}
+            key={exp.company}
+            className="py-4 px-4 border border-zinc-800 rounded-md flex flex-col gap-2 my-4 hover:scale-105 transition-all"
+          >
+            <div className="flex gap-3 items-center">
+              <Image
+                src={exp.logo}
+                width={45}
+                height={45}
+                alt="EdSlash"
+                className="rounded-full"
+              />
+              <h2 className="font-bold underline hover:no-underline text-lg">
+                {exp.company}
+              </h2>
+            </div>
+            <h3>{exp.info}</h3>
+          </Link>
         ))}
       </div>
       <h1 className="text-3xl font-bold pt-10 ">Projects</h1>
@@ -130,7 +146,6 @@ export default function Home() {
           </Link>
         </div>
       </div>
-        
-    </main>
+    </motion.main>
   );
 }
