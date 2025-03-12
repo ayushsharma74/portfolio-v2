@@ -36,15 +36,6 @@ export const projects: Project[] = [
         status: 'online'
     },
     {
-        title: "Portfolio V1",
-        description: "My personal portfolio website.",
-        imgPath: "/project-images/portfolio-v1.png",
-        techs: ["ReactJS", "NextJS", "TailwindCSS", "MagicUI"],
-        githubLink: "https://github.com/ayushsharma74/portfolio",
-        liveLink: "https://ayushsharmaportfolio.vercel.app/",
-        status: 'online'
-    },
-    {
         title: "Clarity",
         description: "A ai based document summarizer tool for students.",
         imgPath: "/project-images/clarity.png",
@@ -52,5 +43,23 @@ export const projects: Project[] = [
         githubLink: "https://github.com/ayushsharma74/clarity",
         liveLink: "https://theclarityai.vercel.app/",
         status: 'building'
+    },
+    {
+        title: "Similarity Search",
+        description: "Similarity search on a dataset of movies using vector embeddings",
+        imgPath: "/project-images/similaritysearch.png",
+        techs: ["ReactJS", "NextJS", "TailwindCSS", "Vector Embeddings", "AstraDB"],
+        githubLink: "https://github.com/ayushsharma74/similaritysearch-system",
+        liveLink: "https://similaritysearch-system-t1mg.vercel.app/",
+        status: 'online'
+    },
+    {
+        title: "Portfolio V1",
+        description: "My personal portfolio website.",
+        imgPath: "/project-images/portfolio-v1.png",
+        techs: ["ReactJS", "NextJS", "TailwindCSS", "MagicUI"],
+        githubLink: "https://github.com/ayushsharma74/portfolio",
+        liveLink: "https://ayushsharmaportfolio.vercel.app/",
+        status: 'online'
     },
 ]
