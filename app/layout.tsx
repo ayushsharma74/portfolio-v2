@@ -4,7 +4,7 @@ import MaxWidthWrapper from "@/components/MaxWidthWrapper";
 import { jura } from "@/fonts/jura";
 import Navbar from "@/components/navigation/Navbar";
 import Footer from "@/components/Footer";
-import { PostHogProvider } from "./providers";
+import { PHProvider } from './providers'
 
 
 export const metadata: Metadata = {
@@ -18,18 +18,18 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
+      <PHProvider>
     <html lang="en">
       <body
         className={`${jura.className} antialiased`}
       >
-        <PostHogProvider>
         <MaxWidthWrapper>
           <Navbar />
           {children}
           <Footer />
         </MaxWidthWrapper>
-        </PostHogProvider>
       </body>
     </html>
+        </PHProvider>
   );
 }
