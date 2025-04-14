@@ -10,6 +10,15 @@ export type Project = {
 
 export const projects: Project[] = [
     {
+        title: "Hirehog",
+        description: "Automated the process of job application tracking using ai.",
+        imgPath: "/project-images/hirehog.png",
+        techs: ["ReactJS", "NextJS","ExpressJS" , "Shadcn UI", "TailwindCSS", "Python", "MongoDB", "Oauth2"],
+        githubLink: "https://github.com/ayushsharma74/hirehog-web",
+        liveLink: "https://hirehog.vercel.app/",
+        status: 'building'
+    },
+    {
         title: "HackToGSoC",
         description: "A study platform for the students preparing for GSoC.",
         imgPath: "/project-images/hacktogsoc.png",
