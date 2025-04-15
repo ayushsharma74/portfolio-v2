@@ -18,7 +18,7 @@ export default function ProjectCard({ project, className = "" }:  ProjectCardPro
           src={project.imgPath}
           width={370}
           height={370}
-          className="rounded-sm"
+          className="rounded-sm hover:blur-xs transition-all"
           alt="HackToGSoC"
         />
         <div className="flex justify-between items-center">
